@@ -12,30 +12,43 @@ public class Tank {
     private Direction dir = Direction.DOWN;
     private static final int SPEED = 5;
     private boolean moving = true;
-    private TankFrame tf;
     private boolean isLive = true;
     private Group group = Group.VILLAIN;
     Rectangle rect = new Rectangle();
 
+    GameModel gm = null;
+
     public Tank() {
     }
 
-    public Tank(int x, int y, Direction dir, TankFrame tf) {
+    public Tank(int x, int y, Direction dir, GameModel gm) {
+        System.out.println("in tank, gm ==" + gm);
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.tf = tf;
+        this.gm = gm;
         rect.x = this.x;
         rect.y = this.y;
         rect.width = WIDTH;
         rect.height = HEIGHT;
     }
 
-    public Tank(int x, int y, Direction dir, TankFrame tf, Group group) {
+//    public Tank(int x, int y, Direction dir, Group group) {
+//        this.x = x;
+//        this.y = y;
+//        this.dir = dir;
+//        this.group = group;
+//        rect.x = this.x;
+//        rect.y = this.y;
+//        rect.width = WIDTH;
+//        rect.height = HEIGHT;
+//    }
+
+    public Tank(int x, int y, Direction dir, GameModel gm, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.tf = tf;
+        this.gm = gm;
         this.group = group;
         rect.x = this.x;
         rect.y = this.y;
@@ -45,7 +58,7 @@ public class Tank {
 
     public void paint(Graphics g) {
         if(!isLive){
-            tf.enemies.remove(this);
+            gm.enemies.remove(this);
             return;
         }
         drawImage(g);
@@ -149,13 +162,13 @@ public class Tank {
                 break;
         }
         /** add bullet by group  */
-        tf.bullets.add(new Bullet(bX, bY, this.dir, tf, this.getGroup()));
+        gm.getBullets().add(new Bullet(bX, bY, this.dir, gm, this.getGroup()));
     }
 
     public void die(){
         /*  tank dies and explodes  */
-        Explosion explosion = new Explosion(x, y, tf);
-        tf.explosions.add(explosion);
+        Explosion explosion = new Explosion(x, y, gm);
+        gm.getExplosions().add(explosion);
         this.setLive(false);
     }
 

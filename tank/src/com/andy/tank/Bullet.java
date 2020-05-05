@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class Bullet {
 
+    GameModel gm = null;
     private static final int SPEED = 10;
     private Direction dir;
     private int x,y;
@@ -12,25 +13,38 @@ public class Bullet {
     private Group group = Group.VILLAIN;
     Rectangle rect = new Rectangle();
 
+
     public static int WIDTH = ResourceMgr.bulletD.getWidth();
     public static int HEIGHT = ResourceMgr.bulletD.getHeight();
-    TankFrame tf;
 
     public Bullet() {
+
     }
 
-    public Bullet(int x, int y, Direction dir, TankFrame tf) {
+    public Bullet(int x, int y, Direction dir, GameModel gm) {
         this.dir = dir;
         this.x = x;
         this.y = y;
-        this.tf = tf;
+        this.gm = gm;
     }
 
-    public Bullet(int x, int y, Direction dir, TankFrame tf, Group group) {
+//    public Bullet(int x, int y, Direction dir, Group group) {
+//        this.dir = dir;
+//        this.x = x;
+//        this.y = y;
+//        this.group = group;
+//        rect.x = this.x;
+//        rect.y = this.y;
+//        rect.width = WIDTH;
+//        rect.height = HEIGHT;
+//    }
+
+    public Bullet(int x, int y, Direction dir, GameModel gm, Group group) {
+        System.out.println("in bullet, gm ==" + gm);
         this.dir = dir;
         this.x = x;
         this.y = y;
-        this.tf = tf;
+        this.gm = gm;
         this.group = group;
         rect.x = this.x;
         rect.y = this.y;
@@ -41,7 +55,7 @@ public class Bullet {
     public void paint(Graphics g) {
         if(!isLive){
             /** remove bullet when it is out of range */
-            tf.bullets.remove(this);
+            gm.getBullets().remove(this);
         }
         drawImage(g);
         move();
