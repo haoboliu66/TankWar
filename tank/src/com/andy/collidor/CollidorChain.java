@@ -29,9 +29,7 @@ public class CollidorChain implements Collidor{
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
-
 
     public boolean collideWith(GameObject o1, GameObject o2){
         for(Collidor c: collidors){

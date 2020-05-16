@@ -1,6 +1,7 @@
 package com.andy.tank;
 
 import com.andy.collidor.CollidorChain;
+import utils.Utils;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class GameModel {
         int initTankCount = Integer.parseInt(PropertyMgr.getInstance().getProperty("initTankCount"));
         //initialize enemies tank
         for(int i=0;i<initTankCount; i++){
-            new Tank(20 + i*80,(i + 1) * 100,Utils.getRandomDirection(), Group.VILLAIN);
+            new Tank(20 + i*80,(i + 1) * 100, Utils.getRandomDirection(), Group.VILLAIN);
         }
     }
 
@@ -65,8 +66,6 @@ public class GameModel {
         Color c = g.getColor();
         g.setColor(Color.WHITE);
         g.setColor(c);
-
-//        myTank.paint(g);
 
         /** paint objects  */
         for(int i=0; i<objects.size(); i++){

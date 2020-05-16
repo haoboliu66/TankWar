@@ -1,12 +1,11 @@
 package com.andy.tank;
 
-import javax.rmi.CORBA.Util;
+import utils.Utils;
+
 import java.awt.*;
-import java.util.Random;
 
 public class Tank extends GameObject{
 
-    private int x, y;
     public static int WIDTH = ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT = ResourceMgr.goodTankU.getHeight();
     private Direction dir = Direction.DOWN;
@@ -17,29 +16,25 @@ public class Tank extends GameObject{
     private int oldX;
     private int oldY;
 
-
-
     public Tank() {
     }
 
     public Tank(int x, int y, Direction dir) {
-        this.x = x;
-        this.y = y;
+        super(x,y);
         this.dir = dir;
     }
 
     public Tank(int x, int y, Direction dir, Group group) {
+        super(x,y);
+        this.dir = dir;
+        this.group = group;
+        rect.x = x;
+        rect.y = y;
+        rect.width = WIDTH;
+        rect.height = HEIGHT;
         if(group == Group.HERO){
             moving = false;
         }
-        this.x = x;
-        this.y = y;
-        this.dir = dir;
-        this.group = group;
-        rect.x = this.x;
-        rect.y = this.y;
-        rect.width = WIDTH;
-        rect.height = HEIGHT;
 
         GameModel.getInstance().add(this);
     }
@@ -167,7 +162,7 @@ public class Tank extends GameObject{
 
     public void die(){
         /*  tank dies and explodes  */
-        Explosion explosion = new Explosion(x, y);
+        Explosion explosion = new Explosion(this.x, this.y);
         this.setLive(false);
     }
 

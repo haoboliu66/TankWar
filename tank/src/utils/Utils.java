@@ -1,4 +1,7 @@
-package com.andy.tank;
+package utils;
+
+import com.andy.tank.Direction;
+import com.andy.tank.TankFrame;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

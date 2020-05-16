@@ -15,8 +15,7 @@ public class Wall extends GameObject {
     }
 
     public Wall(int x, int y){
-        this.x = x;
-        this.y = y;
+        super(x, y);
         rect.x = x;
         rect.y = y;
         rect.width = WIDTH + 10;

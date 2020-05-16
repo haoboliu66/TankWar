@@ -20,18 +20,16 @@ public class Bullet extends GameObject{
     }
 
     public Bullet(int x, int y, Direction dir) {
+        super(x,y);
         this.dir = dir;
-        this.x = x;
-        this.y = y;
     }
 
     public Bullet(int x, int y, Direction dir, Group group) {
+        super(x,y);
         this.dir = dir;
-        this.x = x;
-        this.y = y;
         this.group = group;
-        rect.x = this.x;
-        rect.y = this.y;
+        rect.x = x;
+        rect.y = y;
         rect.width = WIDTH;
         rect.height = HEIGHT;
 
@@ -41,7 +39,6 @@ public class Bullet extends GameObject{
     public void paint(Graphics g) {
         if(!isLive){
             /** remove bullet when it is out of range */
-            System.out.println("remove!!!");
             GameModel.getInstance().remove(this);
         }
         drawImage(g);
