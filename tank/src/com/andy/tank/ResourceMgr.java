@@ -1,14 +1,9 @@
 package com.andy.tank;
 
-import org.junit.Test;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 /**
  * @author andy-liu
@@ -19,6 +14,7 @@ public class ResourceMgr {
     public static BufferedImage goodTankL, goodTankU, goodTankR, goodTankD;
     public static BufferedImage badTankL, badTankU, badTankR, badTankD;
     public static BufferedImage bulletL, bulletU, bulletR, bulletD;
+    public static BufferedImage wall;
     public static BufferedImage[] explosion = new BufferedImage[16];
 
     static {
@@ -36,6 +32,9 @@ public class ResourceMgr {
             bulletL = Utils.rotateImage(bulletU, -90);
             bulletR = Utils.rotateImage(bulletU, 90);
             bulletD = Utils.rotateImage(bulletU, 180);
+
+            wall = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/square0.jpg"));
+
             for (int i=0; i<16; i++){
                 explosion[i] = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/e" + (i + 1) + ".gif"));
             }

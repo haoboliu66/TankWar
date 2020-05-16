@@ -2,6 +2,8 @@ package com.andy.tank;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -16,6 +18,15 @@ public class Utils {
             Direction[] directions = Direction.values();
             int randomFactor = random.nextInt(4);
             return directions[randomFactor];
+        }
+
+        public static final Map<Direction,Direction> opposite;
+        static {
+            opposite = new HashMap<>();
+            opposite.put(Direction.DOWN, Direction.UP);
+            opposite.put(Direction.UP, Direction.DOWN);
+            opposite.put(Direction.LEFT, Direction.RIGHT);
+            opposite.put(Direction.RIGHT, Direction.LEFT);
         }
 
         public static int getRandom(){
@@ -39,5 +50,12 @@ public class Utils {
         graphics2d.dispose();
         return img;
     }
+
+    public static int[] generateRandomCoordinate(){
+       int x = (int)(Math.random() * TankFrame.GAME_HEIGHT);
+       int y = (int)(Math.random() * TankFrame.GAME_WIDTH);
+       return new int[]{x,y};
+    }
+
 
 }

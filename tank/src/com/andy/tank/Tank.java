@@ -4,7 +4,7 @@ import javax.rmi.CORBA.Util;
 import java.awt.*;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends GameObject{
 
     private int x, y;
     public static int WIDTH = ResourceMgr.goodTankU.getWidth();
@@ -14,37 +14,43 @@ public class Tank {
     private boolean moving = true;
     private boolean isLive = true;
     private Group group = Group.VILLAIN;
-    Rectangle rect = new Rectangle();
+    private int oldX;
+    private int oldY;
 
-    GameModel gm = null;
+
+    GameModel gm = GameModel.getInstance();
 
     public Tank() {
     }
 
     public Tank(int x, int y, Direction dir, GameModel gm) {
-        System.out.println("in tank, gm ==" + gm);
+        System.out.println("in tank" + rect);
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.gm = gm;
         rect.x = this.x;
         rect.y = this.y;
-        rect.width = WIDTH;
-        rect.height = HEIGHT;
+        rect.width = WIDTH + 10;
+        rect.height = HEIGHT + 10;
     }
 
-//    public Tank(int x, int y, Direction dir, Group group) {
-//        this.x = x;
-//        this.y = y;
-//        this.dir = dir;
-//        this.group = group;
-//        rect.x = this.x;
-//        rect.y = this.y;
-//        rect.width = WIDTH;
-//        rect.height = HEIGHT;
-//    }
+    public Tank(int x, int y, Direction dir, Group group) {
+        this.x = x;
+        this.y = y;
+        this.dir = dir;
+        this.group = group;
+        rect.x = this.x;
+        rect.y = this.y;
+        rect.width = WIDTH + 10;
+        rect.height = HEIGHT + 10;
+        System.out.println("in constructor gm === " + this.gm);
+    }
 
     public Tank(int x, int y, Direction dir, GameModel gm, Group group) {
+        if(group == Group.HERO){
+            moving = false;
+        }
         this.x = x;
         this.y = y;
         this.dir = dir;
@@ -52,18 +58,18 @@ public class Tank {
         this.group = group;
         rect.x = this.x;
         rect.y = this.y;
-        rect.width = WIDTH;
-        rect.height = HEIGHT;
+        rect.width = WIDTH + 10;
+        rect.height = HEIGHT + 10;
     }
 
     public void paint(Graphics g) {
         if(!isLive){
-            gm.enemies.remove(this);
+            gm.remove(this);
             return;
         }
         drawImage(g);
 
-        move();
+            move();
 
     }
 
@@ -87,6 +93,9 @@ public class Tank {
 
     private void move(){
         if(!moving) return;
+
+        oldX = x;
+        oldY = y;
 
         switch (dir){
             case LEFT:
@@ -120,6 +129,7 @@ public class Tank {
         rect.y = this.y;
     }
 
+
     public void boundaryCheck(){
         if(x < 0) {
             x = 0;
@@ -135,8 +145,19 @@ public class Tank {
         }
     }
 
+    /**  change random direction */
     public void changeDiretion(){
-        this.dir = Utils.getRandomDirection();
+        if(this.group != Group.HERO){
+            this.dir = Utils.getRandomDirection();
+        }
+    }
+
+    /**  resolve conflict  */
+    public void resolveConflict(Tank t1){
+       this.x = oldX;
+       this.y = oldY;
+       t1.x = t1.oldX;
+       t1.y = t1.oldY;
     }
 
     public void fire() {
@@ -162,20 +183,35 @@ public class Tank {
                 break;
         }
         /** add bullet by group  */
-        gm.getBullets().add(new Bullet(bX, bY, this.dir, gm, this.getGroup()));
+        gm.add(new Bullet(bX, bY, this.dir, this.getGroup()));
     }
 
     public void die(){
         /*  tank dies and explodes  */
-        Explosion explosion = new Explosion(x, y, gm);
-        gm.getExplosions().add(explosion);
+        Explosion explosion = new Explosion(x, y);
+        gm.add(explosion);
         this.setLive(false);
     }
 
+    @Override
+    public boolean collideWith(GameObject o) {
+        if(o instanceof Tank){
+            Tank tank = (Tank) o;
+            if(rect.intersects(o.rect)){
+                this.resolveConflict(tank);
+            }
+        }
+        if(o instanceof Wall){
+            Wall wall = (Wall)o;
+            if(rect.intersects(wall.rect)){
+                System.out.println("撞墙");
+                this.x = oldX;
+                this.y = oldY;
+            }
+        }
 
-
-
-
+        return false;
+    }
 
 
 

@@ -2,19 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffa3eab9-2235-4f81-835f-d1ebba3273b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/andy/tank/GameModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/andy/tank/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/META-INF/tank.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/abstractFactory/DefaultFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/abstractFactory/GameFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/abstractFactory/GameFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/fire/AbstractFireStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/fire/AbstractFireStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/designPattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/factory/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/factory/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr07.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/designPattern/src/com/andy/singleton/Mgr08.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr04.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr05.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr06.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr07$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr07$Mgr07Holder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr07.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/com/andy/singleton/Mgr08.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Bullet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Bullet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Explosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/GameModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/GameModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/ResourceMgr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/ResourceMgr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/T.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/T.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/Tank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/TankFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/TankFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/TankFrame$MyKeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/TankFrame$MyKeyListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/andy/tank/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/andy/tank/TankFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/andy/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/andy/tank/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/Explosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/andy/tank/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/T.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/andy/tank/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/andy/tank/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/andy/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/andy/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/andy/tank/abstractFactory/DefaultFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/abstractFactory/DefaultFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/andy/tank/fire/AbstractFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/andy/tank/fire/AbstractFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tank.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +104,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.T">
-    <configuration name="PropertyMgr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.andy.tank.PropertyMgr" />
+    <configuration name="Bullet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.andy.tank.Bullet" />
       <module name="tank" />
       <extension name="coverage">
         <pattern>
@@ -90,8 +117,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResourceMgr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.andy.tank.ResourceMgr" />
+    <configuration name="Car" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.andy.tank.Car" />
+      <module name="tank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.andy.tank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.andy.tank.GameModel" />
+      <module name="tank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.andy.tank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropertyMgr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.andy.tank.PropertyMgr" />
       <module name="tank" />
       <extension name="coverage">
         <pattern>
@@ -116,42 +169,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.andy.tank.Utils" />
-      <module name="tank" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.andy.tank.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResourceMgr.testImg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tank" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.andy.tank.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.andy.tank" />
-      <option name="MAIN_CLASS_NAME" value="com.andy.tank.ResourceMgr" />
-      <option name="METHOD_NAME" value="testImg" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.T" />
+        <item itemvalue="Application.Bullet" />
+        <item itemvalue="Application.Car" />
+        <item itemvalue="Application.GameModel" />
         <item itemvalue="Application.PropertyMgr" />
-        <item itemvalue="Application.Utils" />
-        <item itemvalue="Application.ResourceMgr" />
-        <item itemvalue="JUnit.ResourceMgr.testImg" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +204,8 @@
       <workItem from="1588265066366" duration="6478000" />
       <workItem from="1588276319225" duration="32197000" />
       <workItem from="1588358286905" duration="4455000" />
-      <workItem from="1588695301623" duration="4841000" />
+      <workItem from="1588695301623" duration="11563000" />
+      <workItem from="1588886362908" duration="2947000" />
     </task>
     <servers />
   </component>
@@ -200,102 +225,102 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="399" y="163" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1588327966551" />
-    <state width="1388" height="273" key="GridCell.Tab.0.bottom" timestamp="1588700243735">
+    <state width="1388" height="228" key="GridCell.Tab.0.bottom" timestamp="1588969776803">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="273" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588700243735" />
-    <state width="1388" height="273" key="GridCell.Tab.0.center" timestamp="1588700243735">
+    <state width="1388" height="228" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588969776803" />
+    <state width="1388" height="228" key="GridCell.Tab.0.center" timestamp="1588969776802">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="273" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588700243735" />
-    <state width="1388" height="273" key="GridCell.Tab.0.left" timestamp="1588700243734">
+    <state width="1388" height="228" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588969776802" />
+    <state width="1388" height="228" key="GridCell.Tab.0.left" timestamp="1588969776802">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="273" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588700243734" />
-    <state width="1388" height="273" key="GridCell.Tab.0.right" timestamp="1588700243735">
+    <state width="1388" height="228" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588969776802" />
+    <state width="1388" height="228" key="GridCell.Tab.0.right" timestamp="1588969776802">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="273" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588700243735" />
-    <state width="1388" height="295" key="GridCell.Tab.1.bottom" timestamp="1588699972740">
+    <state width="1388" height="228" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588969776802" />
+    <state width="1388" height="295" key="GridCell.Tab.1.bottom" timestamp="1588869994602">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588699972740" />
-    <state width="1388" height="295" key="GridCell.Tab.1.center" timestamp="1588699972739">
+    <state width="1388" height="295" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588869994602" />
+    <state width="1388" height="295" key="GridCell.Tab.1.center" timestamp="1588869994602">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1588699972739" />
-    <state width="1388" height="295" key="GridCell.Tab.1.left" timestamp="1588699972739">
+    <state width="1388" height="295" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1588869994602" />
+    <state width="1388" height="295" key="GridCell.Tab.1.left" timestamp="1588869994601">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1588699972739" />
-    <state width="1388" height="295" key="GridCell.Tab.1.right" timestamp="1588699972740">
+    <state width="1388" height="295" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1588869994601" />
+    <state width="1388" height="295" key="GridCell.Tab.1.right" timestamp="1588869994602">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1588699972740" />
-    <state width="1388" height="295" key="GridCell.Tab.2.bottom" timestamp="1588699972741">
+    <state width="1388" height="295" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1588869994602" />
+    <state width="1388" height="295" key="GridCell.Tab.2.bottom" timestamp="1588869994603">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588699972741" />
-    <state width="1388" height="295" key="GridCell.Tab.2.center" timestamp="1588699972740">
+    <state width="1388" height="295" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588869994603" />
+    <state width="1388" height="295" key="GridCell.Tab.2.center" timestamp="1588869994603">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1588699972740" />
-    <state width="1388" height="295" key="GridCell.Tab.2.left" timestamp="1588699972740">
+    <state width="1388" height="295" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1588869994603" />
+    <state width="1388" height="295" key="GridCell.Tab.2.left" timestamp="1588869994602">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1588699972740" />
-    <state width="1388" height="295" key="GridCell.Tab.2.right" timestamp="1588699972741">
+    <state width="1388" height="295" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1588869994602" />
+    <state width="1388" height="295" key="GridCell.Tab.2.right" timestamp="1588869994603">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1588699972741" />
-    <state width="1388" height="295" key="GridCell.Tab.3.bottom" timestamp="1588699972742">
+    <state width="1388" height="295" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1588869994603" />
+    <state width="1388" height="295" key="GridCell.Tab.3.bottom" timestamp="1588869994605">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.3.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588699972742" />
-    <state width="1388" height="295" key="GridCell.Tab.3.center" timestamp="1588699972742">
+    <state width="1388" height="295" key="GridCell.Tab.3.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588869994605" />
+    <state width="1388" height="295" key="GridCell.Tab.3.center" timestamp="1588869994604">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.3.center/0.23.1440.877@0.23.1440.877" timestamp="1588699972742" />
-    <state width="1388" height="295" key="GridCell.Tab.3.left" timestamp="1588699972741">
+    <state width="1388" height="295" key="GridCell.Tab.3.center/0.23.1440.877@0.23.1440.877" timestamp="1588869994604" />
+    <state width="1388" height="295" key="GridCell.Tab.3.left" timestamp="1588869994604">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.3.left/0.23.1440.877@0.23.1440.877" timestamp="1588699972741" />
-    <state width="1388" height="295" key="GridCell.Tab.3.right" timestamp="1588699972742">
+    <state width="1388" height="295" key="GridCell.Tab.3.left/0.23.1440.877@0.23.1440.877" timestamp="1588869994604" />
+    <state width="1388" height="295" key="GridCell.Tab.3.right" timestamp="1588869994605">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1588699972742" />
-    <state width="1388" height="295" key="GridCell.Tab.4.bottom" timestamp="1588699972743">
+    <state width="1388" height="295" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1588869994605" />
+    <state width="1388" height="295" key="GridCell.Tab.4.bottom" timestamp="1588869994605">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.4.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588699972743" />
-    <state width="1388" height="295" key="GridCell.Tab.4.center" timestamp="1588699972743">
+    <state width="1388" height="295" key="GridCell.Tab.4.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588869994605" />
+    <state width="1388" height="295" key="GridCell.Tab.4.center" timestamp="1588869994605">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.4.center/0.23.1440.877@0.23.1440.877" timestamp="1588699972743" />
-    <state width="1388" height="295" key="GridCell.Tab.4.left" timestamp="1588699972743">
+    <state width="1388" height="295" key="GridCell.Tab.4.center/0.23.1440.877@0.23.1440.877" timestamp="1588869994605" />
+    <state width="1388" height="295" key="GridCell.Tab.4.left" timestamp="1588869994605">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.4.left/0.23.1440.877@0.23.1440.877" timestamp="1588699972743" />
-    <state width="1388" height="295" key="GridCell.Tab.4.right" timestamp="1588699972743">
+    <state width="1388" height="295" key="GridCell.Tab.4.left/0.23.1440.877@0.23.1440.877" timestamp="1588869994605" />
+    <state width="1388" height="295" key="GridCell.Tab.4.right" timestamp="1588869994605">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.4.right/0.23.1440.877@0.23.1440.877" timestamp="1588699972743" />
-    <state width="1388" height="295" key="GridCell.Tab.5.bottom" timestamp="1588699972745">
+    <state width="1388" height="295" key="GridCell.Tab.4.right/0.23.1440.877@0.23.1440.877" timestamp="1588869994605" />
+    <state width="1388" height="295" key="GridCell.Tab.5.bottom" timestamp="1588869994606">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.5.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588699972745" />
-    <state width="1388" height="295" key="GridCell.Tab.5.center" timestamp="1588699972744">
+    <state width="1388" height="295" key="GridCell.Tab.5.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588869994606" />
+    <state width="1388" height="295" key="GridCell.Tab.5.center" timestamp="1588869994606">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.5.center/0.23.1440.877@0.23.1440.877" timestamp="1588699972744" />
-    <state width="1388" height="295" key="GridCell.Tab.5.left" timestamp="1588699972744">
+    <state width="1388" height="295" key="GridCell.Tab.5.center/0.23.1440.877@0.23.1440.877" timestamp="1588869994606" />
+    <state width="1388" height="295" key="GridCell.Tab.5.left" timestamp="1588869994606">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.5.left/0.23.1440.877@0.23.1440.877" timestamp="1588699972744" />
-    <state width="1388" height="295" key="GridCell.Tab.5.right" timestamp="1588699972744">
+    <state width="1388" height="295" key="GridCell.Tab.5.left/0.23.1440.877@0.23.1440.877" timestamp="1588869994606" />
+    <state width="1388" height="295" key="GridCell.Tab.5.right" timestamp="1588869994606">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1388" height="295" key="GridCell.Tab.5.right/0.23.1440.877@0.23.1440.877" timestamp="1588699972744" />
+    <state width="1388" height="295" key="GridCell.Tab.5.right/0.23.1440.877@0.23.1440.877" timestamp="1588869994606" />
     <state x="0" y="206" key="RollbackChangesDialog" timestamp="1588695974510">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -304,14 +329,18 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1588284207820" />
+    <state x="382" y="138" width="675" height="655" key="StructurePopup" timestamp="1588923477527">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="382" y="138" width="675" height="655" key="StructurePopup/0.23.1440.877@0.23.1440.877" timestamp="1588923477527" />
     <state x="360" y="278" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588321327466">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="360" y="278" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.877@0.23.1440.877" timestamp="1588321327466" />
-    <state x="301" y="23" width="838" height="1032" key="search.everywhere.popup" timestamp="1588358395402">
+    <state x="301" y="23" width="838" height="877" key="search.everywhere.popup" timestamp="1588923467014">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="301" y="23" width="838" height="1032" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1588358395402" />
+    <state x="301" y="23" width="838" height="877" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1588923467014" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/tank$Tank.ic" NAME="Tank Coverage Results" MODIFIED="1588266735296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

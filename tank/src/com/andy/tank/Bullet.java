@@ -1,18 +1,18 @@
 package com.andy.tank;
 
 import java.awt.*;
+import java.util.HashSet;
+import java.util.Random;
 
 
-public class Bullet {
+public class Bullet extends GameObject{
 
-    GameModel gm = null;
+    GameModel gm = GameModel.getInstance();
     private static final int SPEED = 10;
     private Direction dir;
-    private int x,y;
+//    private int x,y;
     private boolean isLive = true;
     private Group group = Group.VILLAIN;
-    Rectangle rect = new Rectangle();
-
 
     public static int WIDTH = ResourceMgr.bulletD.getWidth();
     public static int HEIGHT = ResourceMgr.bulletD.getHeight();
@@ -28,16 +28,16 @@ public class Bullet {
         this.gm = gm;
     }
 
-//    public Bullet(int x, int y, Direction dir, Group group) {
-//        this.dir = dir;
-//        this.x = x;
-//        this.y = y;
-//        this.group = group;
-//        rect.x = this.x;
-//        rect.y = this.y;
-//        rect.width = WIDTH;
-//        rect.height = HEIGHT;
-//    }
+    public Bullet(int x, int y, Direction dir, Group group) {
+        this.dir = dir;
+        this.x = x;
+        this.y = y;
+        this.group = group;
+        rect.x = this.x;
+        rect.y = this.y;
+        rect.width = WIDTH;
+        rect.height = HEIGHT;
+    }
 
     public Bullet(int x, int y, Direction dir, GameModel gm, Group group) {
         System.out.println("in bullet, gm ==" + gm);
@@ -55,7 +55,7 @@ public class Bullet {
     public void paint(Graphics g) {
         if(!isLive){
             /** remove bullet when it is out of range */
-            gm.getBullets().remove(this);
+            gm.remove(this);
         }
         drawImage(g);
         move();
@@ -105,15 +105,18 @@ public class Bullet {
     }
 
     /** collision test  */
-    public void collideWith(Tank tank){
+    public boolean collideWith(GameObject o){
+        Tank tank = (Tank)o;
         if(this.group == tank.getGroup()){
-            return;
+            return false;
         }
 
         if(rect.intersects(tank.rect)){
             tank.die();
             this.die();
+            return true;
         }
+        return false;
     }
 
 

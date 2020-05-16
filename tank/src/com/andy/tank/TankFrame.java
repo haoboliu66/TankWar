@@ -11,12 +11,12 @@ import java.util.List;
 
 public class TankFrame extends Frame {
 
-    public static final int GAME_WIDTH = 800, GAME_HEIGHT = 600;
+    public static final int GAME_WIDTH = Integer.parseInt(PropertyMgr.getInstance().getProperty("gameWidth"));
+    public static final int GAME_HEIGHT = Integer.parseInt(PropertyMgr.getInstance().getProperty("gameHeight"));
 
     GameModel gm = GameModel.getInstance();
 
     public TankFrame(){
-        System.out.println("in dfff, gm ==" + gm);
         setSize(GAME_WIDTH,GAME_HEIGHT);
         setResizable(false);
         setTitle("TANK WAR");
