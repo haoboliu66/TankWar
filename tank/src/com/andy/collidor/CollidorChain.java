@@ -1,7 +1,10 @@
 package com.andy.collidor;
 
 import com.andy.tank.GameObject;
+import com.andy.tank.PropertyMgr;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,16 +18,25 @@ public class CollidorChain implements Collidor{
 
     public CollidorChain() {
         collidors = new LinkedList<>();
-        collidors.add(new TankBulletCollidor());
-        collidors.add(new TankTankCollidor());
-        collidors.add(new TankWallCollidor());
+
+        String colliors = PropertyMgr.getInstance().getProperty("colliors");
+        String[] names = colliors.split(",");
+
+        try {
+            for(String className: names){
+                collidors.add((Collidor) Class.forName(className).getDeclaredConstructor().newInstance());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 
     public boolean collideWith(GameObject o1, GameObject o2){
         for(Collidor c: collidors){
             if(c.collideWith(o1,o2)){
-                return true;
+                break;
             }
         }
         return false;

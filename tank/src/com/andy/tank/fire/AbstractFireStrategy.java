@@ -43,7 +43,6 @@ public abstract class AbstractFireStrategy implements FireStrategy {
 //            new Bullet(bX, bY, t.getDir(), t.getTf(), t.getGroup());
 
         }else if(fs.equals("FOUR_DIRECTION")){
-            System.out.println("four dirsss");
             Direction[] dirs = Direction.values();
             for(Direction dir: dirs) {
 //                new Bullet(bX + Tank.WIDTH / 2 - Bullet.WIDTH / 2, bY + Tank.HEIGHT / 2 -Bullet.HEIGHT / 2, dir, t.getTf(), t.getGroup());

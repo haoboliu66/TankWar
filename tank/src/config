@@ -4,4 +4,4 @@ tankSpeed=5
 bulletSpeed=10
 gameWidth=1080
 gameHeight=720
-colliors=
+colliors=com.andy.collidor.TankWallCollidor,com.andy.collidor.TankBulletCollidor,com.andy.collidor.TankTankCollidor,com.andy.collidor.BulletWallCollidor

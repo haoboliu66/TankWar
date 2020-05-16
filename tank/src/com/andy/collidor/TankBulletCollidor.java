@@ -2,6 +2,7 @@ package com.andy.collidor;
 
 import com.andy.tank.Bullet;
 import com.andy.tank.GameObject;
+import com.andy.tank.Group;
 import com.andy.tank.Tank;
 
 /**
@@ -22,9 +23,18 @@ public class TankBulletCollidor implements Collidor {
             collideWith(o2,o1);
         }
         if(bullet != null && tank != null){
-            bullet.collideWith(tank);
+            if(bullet.getGroup() == tank.getGroup()){
+                return false;
+            }
+            if(tank.getGroup() == Group.HERO){
+                return false;
+            }
+            if(bullet.getRect().intersects(tank.getRect())){
+                tank.die();
+                bullet.die();
+                return true;
+            }
         }
-
         return false;
     }
 

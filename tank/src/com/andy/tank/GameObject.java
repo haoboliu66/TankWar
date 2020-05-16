@@ -18,7 +18,7 @@ public abstract class GameObject {
 
     public abstract void paint(Graphics g);
 
-    public abstract boolean collideWith(GameObject o);
+//    public abstract boolean collideWith(GameObject o);
 
 
     public int getX() {

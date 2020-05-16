@@ -14,9 +14,10 @@ public class TankFrame extends Frame {
     public static final int GAME_WIDTH = Integer.parseInt(PropertyMgr.getInstance().getProperty("gameWidth"));
     public static final int GAME_HEIGHT = Integer.parseInt(PropertyMgr.getInstance().getProperty("gameHeight"));
 
-    GameModel gm = GameModel.getInstance();
+    GameModel gm;
 
     public TankFrame(){
+        gm = GameModel.getInstance();
         setSize(GAME_WIDTH,GAME_HEIGHT);
         setResizable(false);
         setTitle("TANK WAR");

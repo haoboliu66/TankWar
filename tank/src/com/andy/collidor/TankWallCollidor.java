@@ -1,5 +1,6 @@
 package com.andy.collidor;
 
+import com.andy.tank.Bullet;
 import com.andy.tank.GameObject;
 import com.andy.tank.Tank;
 import com.andy.tank.Wall;
@@ -15,7 +16,9 @@ public class TankWallCollidor implements Collidor{
         if(o1 instanceof Tank && o2 instanceof Wall){
             Tank tank = (Tank)o1;
             Wall wall = (Wall)o2;
-            tank.collideWith(wall);
+            if(tank.getRect().intersects(wall.getRect())){
+                tank.resolveConflict();
+            }
         }
         if(o1 instanceof Wall && o2 instanceof Tank){
             collideWith(o2,o1);

@@ -21,22 +21,14 @@ public class Wall extends GameObject {
         rect.y = y;
         rect.width = WIDTH + 10;
         rect.height = HEIGHT + 10;
-    }
 
+        GameModel.getInstance().add(this);
+    }
 
     @Override
     public void paint(Graphics g) {
         g.drawImage(ResourceMgr.wall,x,y,null);
     }
-
-
-    @Override
-    public boolean collideWith(GameObject o) {
-        return false;
-    }
-
-
-
 
 
 }

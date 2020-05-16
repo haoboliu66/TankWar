@@ -11,8 +11,6 @@ public class Explosion extends GameObject{
     private int x, y;
     public static int WIDTH = ResourceMgr.explosion[0].getWidth();
     public static int HEIGHT = ResourceMgr.explosion[0].getHeight();
-//    GameModel gm = null;
-    GameModel gm = GameModel.getInstance();
 
     private int step = 0;
 
@@ -22,25 +20,14 @@ public class Explosion extends GameObject{
     public Explosion(int x, int y){
         this.x = x;
         this.y = y;
-    }
-
-    public Explosion(int x, int y, GameModel gm) {
-        System.out.println("in expo, gm ==" + gm);
-        this.x = x;
-        this.y = y;
-        this.gm = gm;
+        GameModel.getInstance().add(this);
     }
 
     public void paint(Graphics g){
         g.drawImage(ResourceMgr.explosion[step++],x,y,null);
         if(step >= ResourceMgr.explosion.length){
-            gm.remove(this);
+            GameModel.getInstance().remove(this);
         }
-    }
-
-    @Override
-    public boolean collideWith(GameObject o) {
-        return false;
     }
 
 

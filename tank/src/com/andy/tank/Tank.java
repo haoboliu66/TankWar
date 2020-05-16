@@ -18,59 +18,40 @@ public class Tank extends GameObject{
     private int oldY;
 
 
-    GameModel gm = GameModel.getInstance();
 
     public Tank() {
     }
 
-    public Tank(int x, int y, Direction dir, GameModel gm) {
-        System.out.println("in tank" + rect);
+    public Tank(int x, int y, Direction dir) {
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.gm = gm;
-        rect.x = this.x;
-        rect.y = this.y;
-        rect.width = WIDTH + 10;
-        rect.height = HEIGHT + 10;
     }
 
     public Tank(int x, int y, Direction dir, Group group) {
-        this.x = x;
-        this.y = y;
-        this.dir = dir;
-        this.group = group;
-        rect.x = this.x;
-        rect.y = this.y;
-        rect.width = WIDTH + 10;
-        rect.height = HEIGHT + 10;
-        System.out.println("in constructor gm === " + this.gm);
-    }
-
-    public Tank(int x, int y, Direction dir, GameModel gm, Group group) {
         if(group == Group.HERO){
             moving = false;
         }
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.gm = gm;
         this.group = group;
         rect.x = this.x;
         rect.y = this.y;
-        rect.width = WIDTH + 10;
-        rect.height = HEIGHT + 10;
+        rect.width = WIDTH;
+        rect.height = HEIGHT;
+
+        GameModel.getInstance().add(this);
     }
 
     public void paint(Graphics g) {
         if(!isLive){
-            gm.remove(this);
+            GameModel.getInstance().remove(this);
             return;
         }
         drawImage(g);
 
-            move();
-
+        move();
     }
 
     /** draw tank image */
@@ -93,7 +74,7 @@ public class Tank extends GameObject{
 
     private void move(){
         if(!moving) return;
-
+        // keep old coordinates for conflict resolution
         oldX = x;
         oldY = y;
 
@@ -153,11 +134,9 @@ public class Tank extends GameObject{
     }
 
     /**  resolve conflict  */
-    public void resolveConflict(Tank t1){
-       this.x = oldX;
-       this.y = oldY;
-       t1.x = t1.oldX;
-       t1.y = t1.oldY;
+    public void resolveConflict(){
+       this.x = this.oldX;
+       this.y = this.oldY;
     }
 
     public void fire() {
@@ -182,35 +161,14 @@ public class Tank extends GameObject{
                 bY = this.y + Tank.HEIGHT - Bullet.HEIGHT / 2;
                 break;
         }
-        /** add bullet by group  */
-        gm.add(new Bullet(bX, bY, this.dir, this.getGroup()));
+        /** add bullet by group */
+        new Bullet(bX, bY, this.dir, this.getGroup());
     }
 
     public void die(){
         /*  tank dies and explodes  */
         Explosion explosion = new Explosion(x, y);
-        gm.add(explosion);
         this.setLive(false);
-    }
-
-    @Override
-    public boolean collideWith(GameObject o) {
-        if(o instanceof Tank){
-            Tank tank = (Tank) o;
-            if(rect.intersects(o.rect)){
-                this.resolveConflict(tank);
-            }
-        }
-        if(o instanceof Wall){
-            Wall wall = (Wall)o;
-            if(rect.intersects(wall.rect)){
-                System.out.println("撞墙");
-                this.x = oldX;
-                this.y = oldY;
-            }
-        }
-
-        return false;
     }
 
 
@@ -262,6 +220,5 @@ public class Tank extends GameObject{
     public void setGroup(Group group) {
         this.group = group;
     }
-
 
 }

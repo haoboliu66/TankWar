@@ -16,27 +16,41 @@ import java.util.List;
  */
 public class GameModel {
 
-    private static final GameModel gm = new GameModel();
+    private static GameModel GM_INSTANCE  = new GameModel();
 
-    Tank myTank = new Tank(100,600,Direction.DOWN, this,Group.HERO);
+    static {
+        GM_INSTANCE.init();
+    }
 
+    Tank myTank;
     private List<GameObject> objects = new ArrayList<>();
-
     CollidorChain chain = new CollidorChain();
 
-    public GameModel() {
+    private GameModel() {
+    }
+
+    public void init(){
+        myTank = new Tank(100,600,Direction.DOWN, Group.HERO);
+        initializeTanks();
+        createWall();
+    }
+
+
+    private void initializeTanks(){
         int initTankCount = Integer.parseInt(PropertyMgr.getInstance().getProperty("initTankCount"));
         //initialize enemies tank
         for(int i=0;i<initTankCount; i++){
-            objects.add(new Tank(20 + i*80,(i + 1) * 100,Utils.getRandomDirection(),this, Group.VILLAIN));
-        }
-
-        for(int i=0; i < TankFrame.GAME_HEIGHT / Wall.HEIGHT; i++){
-            objects.add(new Wall(600,400 + i * Wall.HEIGHT));
+            new Tank(20 + i*80,(i + 1) * 100,Utils.getRandomDirection(), Group.VILLAIN);
         }
     }
 
 
+    private void createWall(){
+        for(int i=0; i < TankFrame.GAME_HEIGHT / Wall.HEIGHT - 1; i++){
+            new Wall(600,400 + i * Wall.HEIGHT);
+            new Wall(300 + i * Wall.WIDTH , 200);
+        }
+    }
 
     public void add(GameObject go){
         this.objects.add(go);
@@ -48,15 +62,11 @@ public class GameModel {
 
 
     public void paint(Graphics g) {
-
         Color c = g.getColor();
         g.setColor(Color.WHITE);
-//        g.drawString("num of bullets: " + bullets.size(),10,60);
-//        g.drawString("num of enemies: " + enemies.size(),10,80);
-//        g.drawString("num of explosions: " + explosions.size(),10,100);
         g.setColor(c);
 
-        myTank.paint(g);
+//        myTank.paint(g);
 
         /** paint objects  */
         for(int i=0; i<objects.size(); i++){
@@ -75,22 +85,15 @@ public class GameModel {
 //            Bullet b = it.next();
 //            if(!b.isLive()) it.remove();
 //        }
-
     }
 
     public Tank getMyTank() {
         return myTank;
     }
 
-
-
-
     public static GameModel getInstance(){
-        return gm;
+        return GM_INSTANCE;
     }
-
-
-
 
 
 

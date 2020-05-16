@@ -7,10 +7,8 @@ import java.util.Random;
 
 public class Bullet extends GameObject{
 
-    GameModel gm = GameModel.getInstance();
     private static final int SPEED = 10;
     private Direction dir;
-//    private int x,y;
     private boolean isLive = true;
     private Group group = Group.VILLAIN;
 
@@ -21,11 +19,10 @@ public class Bullet extends GameObject{
 
     }
 
-    public Bullet(int x, int y, Direction dir, GameModel gm) {
+    public Bullet(int x, int y, Direction dir) {
         this.dir = dir;
         this.x = x;
         this.y = y;
-        this.gm = gm;
     }
 
     public Bullet(int x, int y, Direction dir, Group group) {
@@ -37,25 +34,15 @@ public class Bullet extends GameObject{
         rect.y = this.y;
         rect.width = WIDTH;
         rect.height = HEIGHT;
-    }
 
-    public Bullet(int x, int y, Direction dir, GameModel gm, Group group) {
-        System.out.println("in bullet, gm ==" + gm);
-        this.dir = dir;
-        this.x = x;
-        this.y = y;
-        this.gm = gm;
-        this.group = group;
-        rect.x = this.x;
-        rect.y = this.y;
-        rect.width = WIDTH;
-        rect.height = HEIGHT;
+        GameModel.getInstance().add(this);
     }
 
     public void paint(Graphics g) {
         if(!isLive){
             /** remove bullet when it is out of range */
-            gm.remove(this);
+            System.out.println("remove!!!");
+            GameModel.getInstance().remove(this);
         }
         drawImage(g);
         move();
@@ -104,33 +91,12 @@ public class Bullet extends GameObject{
         rect.y = this.y;
     }
 
-    /** collision test  */
-    public boolean collideWith(GameObject o){
-        Tank tank = (Tank)o;
-        if(this.group == tank.getGroup()){
-            return false;
-        }
-
-        if(rect.intersects(tank.rect)){
-            tank.die();
-            this.die();
-            return true;
-        }
-        return false;
-    }
-
-
-
-    private void die(){
-        setLive(false);
+    public void die(){
+        isLive = false;
     }
 
     public boolean isLive() {
         return isLive;
-    }
-
-    public void setLive(boolean live) {
-        isLive = live;
     }
 
     public Direction getDir() {
