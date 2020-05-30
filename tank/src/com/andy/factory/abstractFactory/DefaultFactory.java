@@ -1,4 +1,4 @@
-//package com.andy.tank.abstractFactory;
+//package com.andy.factory.abstractFactory;
 //
 //import com.andy.tank.*;
 //

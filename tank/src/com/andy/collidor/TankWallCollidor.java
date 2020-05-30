@@ -1,6 +1,5 @@
 package com.andy.collidor;
 
-import com.andy.tank.Bullet;
 import com.andy.tank.GameObject;
 import com.andy.tank.Tank;
 import com.andy.tank.Wall;

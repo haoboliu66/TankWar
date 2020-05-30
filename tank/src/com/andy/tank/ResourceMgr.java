@@ -17,6 +17,8 @@ public class ResourceMgr {
     public static BufferedImage badTankL, badTankU, badTankR, badTankD;
     public static BufferedImage bulletL, bulletU, bulletR, bulletD;
     public static BufferedImage wall;
+    public static BufferedImage gameOver;
+    public static BufferedImage youWin;
     public static BufferedImage[] explosion = new BufferedImage[16];
 
     static {
@@ -36,17 +38,18 @@ public class ResourceMgr {
             bulletD = Utils.rotateImage(bulletU, 180);
 
             wall = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/square0.jpg"));
+            gameOver = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/gameover.jpg"));
+            youWin = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/youwin.png"));
 
-            for (int i=0; i<16; i++){
+            for (int i = 0; i < 16; i++) {
                 explosion[i] = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/e" + (i + 1) + ".gif"));
             }
 
         } catch (IOException e) {
+            System.out.println(youWin);
             e.printStackTrace();
         }
     }
-
-
 
 
 }

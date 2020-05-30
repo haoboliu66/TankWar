@@ -1,9 +1,6 @@
 package com.andy.collidor;
 
-import com.andy.tank.Bullet;
-import com.andy.tank.GameObject;
-import com.andy.tank.Group;
-import com.andy.tank.Tank;
+import com.andy.tank.*;
 
 /**
  * @author andy-liu
@@ -15,22 +12,28 @@ public class TankBulletCollidor implements Collidor {
     public boolean collideWith(GameObject o1, GameObject o2) {
         Tank tank = null;
         Bullet bullet = null;
-        if(o1 instanceof Tank && o2 instanceof Bullet){
+        if (o1 instanceof Tank && o2 instanceof Bullet) {
             tank = (Tank) o1;
             bullet = (Bullet) o2;
         }
-        if(o1 instanceof Bullet && o2 instanceof Tank){
-            collideWith(o2,o1);
+        if (o1 instanceof Bullet && o2 instanceof Tank) {
+            collideWith(o2, o1);
         }
-        if(bullet != null && tank != null){
-            if(bullet.getGroup() == tank.getGroup()){
+        if (bullet != null && tank != null) {
+            if (bullet.getGroup() == tank.getGroup()) {
                 return false;
             }
-            if(tank.getGroup() == Group.HERO){
-                return false;
-            }
-            if(bullet.getRect().intersects(tank.getRect())){
-                tank.die();
+            // Setting: Hero never dies, to be discarded
+//            if (tank.getGroup() == Group.HERO) {
+//                return false;
+//            }
+
+            if (bullet.getRect().intersects(tank.getRect())) {
+                if (tank.getLife() - bullet.getPower() > 0) {
+                    tank.setLife(tank.getLife() - bullet.getPower());
+                } else {
+                    tank.die();
+                }
                 bullet.die();
                 return true;
             }
