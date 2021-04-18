@@ -1,0 +1,8 @@
+#tanks count at initialization
+initTankCount=5
+tankSpeed=5
+bulletSpeed=10
+gameWidth=1080
+gameHeight=720
+
+colliors=com.andy.collidor.TankWallCollidor,com.andy.collidor.TankBulletCollidor,com.andy.collidor.TankTankCollidor,com.andy.collidor.BulletWallCollidor
